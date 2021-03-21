@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mderuell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/18 08:32:53 by mderuell          #+#    #+#             */
-/*   Updated: 2021/03/21 11:31:43 by mderuell         ###   ########.fr       */
+/*   Created: 2021/03/18 14:36:14 by mderuell          #+#    #+#             */
+/*   Updated: 2021/03/18 16:26:29 by mderuell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_strncpy(char *dest, char *src, unsigned int n)
+char *ft_strcapitalize(char *str)
 {
-	unsigned int i;
+	int i;
 
 	i = 0;
-	while (i < n)
+	while (str[i] != 0)
 	{
-		if (src[i])
-			dest[i] = src[i];
-		else
-			dest[i] = '\0';
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += 32;
 		i++;
 	}
-	return (dest);
-}
+	return (str);
+}~

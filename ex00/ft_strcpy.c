@@ -6,7 +6,7 @@
 /*   By: mderuell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:42:41 by mderuell          #+#    #+#             */
-/*   Updated: 2021/03/17 16:50:48 by mderuell         ###   ########.fr       */
+/*   Updated: 2021/03/21 11:29:47 by mderuell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@ char	*ft_strcpy(char *dest, char *src)
 	int i;
 
 	i = 0;
-	while (*(i + src) != 0)
+	while (src[i])
 	{
-		*(dest + i) = *(src + i);
+		dest[i] = src[i];
 		i++;
 	}
+	dest[i] = '\0';
 	return (dest);
 }
