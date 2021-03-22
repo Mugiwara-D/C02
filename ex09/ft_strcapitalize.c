@@ -6,20 +6,29 @@
 /*   By: mderuell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 14:36:14 by mderuell          #+#    #+#             */
-/*   Updated: 2021/03/18 16:26:29 by mderuell         ###   ########.fr       */
+/*   Updated: 2021/03/22 11:09:57 by mderuell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strcapitalize(char *str)
+char	*ft_strcapitalize(char *str)
 {
 	int i;
 
 	i = 0;
 	while (str[i] != 0)
 	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			str[i] += 32;
+		if (str[i] >= 'a' && str[i] <= 'z')
+		{
+			if (str[i - 1] > '9' || str[i - 1] < '0')
+			{
+				if (str[i - 1] > 'Z' || str[i - 1] < 'A')
+				{
+					if (str[i - 1] < 'a' || str[i - 1] > 'z')
+						str[i] -= 32;
+				}
+			}
+		}
 		i++;
 	}
 	return (str);
-}~
+}
